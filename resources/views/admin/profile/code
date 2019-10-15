@@ -1,0 +1,6 @@
+//ターミナル内に記入
+$ cd /environment/mynews/resources/views/admin
+$mkdir profile
+$cd profile
+$touch create.blade.php
+$touch edit.blade.php
