@@ -5,9 +5,21 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
-        <title>MyNews create</title>
+        <title>MyNews Profile</title>
     </head>
     <body>
-        <h1>Myニュースを作成する</h1>
+        @extends('layouts.profile')
+        
+        @section('title', 'My プロフィール')
+        
+        @section('content')
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 mx-auto">
+                        <h1>My　プロフィール</h1>
+                    </div>
+                </div>
+            </div>
+        @endsection
     </body>
 </html>
