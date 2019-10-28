@@ -16,7 +16,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 mx-auto">
-                    <h1>Myニュースを編集する</h1>
+                    <h1>Myプロフィールを編集する</h1>
                 </div>
             </div>
         </div>
