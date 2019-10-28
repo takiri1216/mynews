@@ -1,8 +1,8 @@
-<?@h@
+<?php
 
 return [
     'Login' => 'ログイン',
-    'E-Mial Address' => 'メールアドレス',
+    'E-Mail Address' => 'メールアドレス',
     'Password' => 'パスワード',
     'Remember Me' => 'ログイン情報を記憶する',
     ];

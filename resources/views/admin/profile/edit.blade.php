@@ -8,6 +8,18 @@
         <title>MyNews edit</title>
     </head>
     <body>
-        <h1>Myニュースを編集する</h1>
+        @extends( 'layouts.profile' )
+        
+        @section( 'title', 'Profileの編集' )
+        
+        @section( 'content' )
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 mx-auto">
+                    <h1>Myニュースを編集する</h1>
+                </div>
+            </div>
+        </div>
+        @endsection
     </body>
 </html>
