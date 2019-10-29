@@ -30,15 +30,21 @@
                             <div class="form-group row">
                                 <label class="col-md-2">氏名</label>
                                 <div class="col-md-10">
-                                    <input type="text" class="form-control" name="title" value="{{ old('title') }}">
+                                    <input type="text" class="form-control" name="name" value="{{ old('name') }}">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label class="col-md-2">性別</label>
                                 <div class="col-md-10">
-                                    <input type="radio" class="form-control" name="gender" value="{{ old('gender') }}">男
-                                    <input type="radio" class="form-control" name="gender" value="{{ old('gender') }}">女
-                                    <input type="radio" class="form-control" name="gender" value="{{ old('gender') }}">どちらとも言えない
+                                    <div class="form-check form-check-inline">
+                                        <input type="radio" class="form-check-input" name="gender" value="男">男
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input type="radio" class="form-check-input" name="gender" value="女">女
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input type="radio" class="form-check-input" name="gender" value="どちらとも言えない">どちらとも言えない
+                                    </div>
                                 </div>
                             </div>
                             <div class="form-group row">
