@@ -29,7 +29,7 @@ class ProfileController extends Controller
         
 
         $profiles->save();
-        return redirect('admin/profile.create');
+        return redirect('admin/profile/create');
     }
     public function edit()
     {
