@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Profile;
 
 class ProfileController extends Controller
 {
@@ -11,8 +12,23 @@ class ProfileController extends Controller
     {
         return view('admin.profile.create');
     }
-    public function create()
+    public function create(Request $request)
     {
+         // Varidationを行う
+        $validatedData = $request->validate([
+            'name' => 'required',
+            'gender' => 'required',
+            'hobby' =>  'required',
+            'introduction' =>  'required'
+        ]);
+        $profiles = new Profile();
+        $profiles->name = $validatedData['name'];
+        $profiles->gender = $validatedData['gender'];
+        $profiles->hobby = $validatedData['hobby'];
+        $profiles->introduction = $validatedData['introduction'];
+        
+
+        $profiles->save();
         return redirect('admin/profile.create');
     }
     public function edit()
