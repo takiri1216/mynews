@@ -15,28 +15,23 @@ class ProfileController extends Controller
     public function create(Request $request)
     {
          // Varidationを行う
-        $validatedData = $request->validate([
-            'name' => 'required',
-            'gender' => 'required',
-            'hobby' =>  'required',
-            'introduction' =>  'required'
-        ]);
-        $profiles = new Profile();
-        $profiles->name = $validatedData['name'];
-        $profiles->gender = $validatedData['gender'];
-        $profiles->hobby = $validatedData['hobby'];
-        $profiles->introduction = $validatedData['introduction'];
+        $this->validate($request, Profile::$rules);
+        $profile = new Profile;
+        $form = $request->all();
         
-
-        $profiles->save();
+        //データベースに保存する
+        $profile->fill($form);
+        $profile->save();
+        // admin/news/createにリダイレクトする
         return redirect('admin/profile/create');
     }
+
     public function edit()
     {
         return view('admin.profile.edit');
     }
     public function update()
     {
-        return redirect('admin/profile.edit');
+        return view('admin.profile.success');
     }
 }
