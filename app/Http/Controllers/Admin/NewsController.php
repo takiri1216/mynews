@@ -98,6 +98,7 @@ class NewsController extends Controller
       
       $history = new History;
       $history->news_id = $news->id;
+      $history->profile_id = 0;
       $history->edited_at = Carbon::now();
       $history->save();
       

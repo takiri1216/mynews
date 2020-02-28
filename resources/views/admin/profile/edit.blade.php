@@ -47,7 +47,7 @@
                             <textarea class="form-control" name="introduction" rows="10">{{ old('introduction') }}</textarea>
                         </div>
                     </div>
-                    <div "form-group row">
+                    <div class="form-group row">
                         <div class="col-md-10">
                             <input type="hidden" name="id" value="{{ old('hidden') }}">
                             {{ csrf_field() }}
@@ -58,13 +58,10 @@
                 <div class="row mt-5">
                     <div class="col-md-4 mx-auto">
                         <h2>編集履歴</h2>
-                        {{ $profile_form }}
                         <ul class="list-group">
-                            @if ($profile_form->histories )
-                                @foreach ($profile_form->histories as $history)
-                                    <li class="list-group-item">{{ $history->edited_at }}</li>
-                                @endforeach
-                             @endif
+                            @foreach ($histories as $history)
+                                <li class="list-group-item">{{ $history->edited_at }}</li>
+                            @endforeach
                         </ul>
                     </div>
                 </div>

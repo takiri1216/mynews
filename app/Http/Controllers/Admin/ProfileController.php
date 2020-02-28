@@ -30,20 +30,28 @@ class ProfileController extends Controller
 
     public function edit(Request $request)
     {
+        
+        $histories = History::where('news_id', 0)->get();
         $profile = Profile::find($request->id);
         if (empty($profile)) {
             abort(404);    
       }
-        return view('admin.profile.edit', ['profile_form' => $profile]);
+        return view('admin.profile.edit', ['profile_form' => $profile,'histories' => $histories]);
     }
     public function update(Request $request)
     {
         
-        $profile_form = $request->all();
-        $profile = Profile::find($request ->id);
+        $this->validate($request, Profile::$rules);
+        $profile = new Profile;
+        $form = $request->all();
+        
+        //データベースに保存する
+        $profile->fill($form);
+        $profile->save();
         
         $history = new History;
         $history->profile_id = $profile->id;
+        $history->news_id = 0;
         $history->edited_at = Carbon::now();
         $history->save();
         
